@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/332a215f17.js" cross origin="anonymous"></script>
+    <link rel="stylesheet" href="page.css">
+</head>
+
+<body>
+    <p>
+        <?php echo "Hello World" ?> </p>
+    <?php
+// Microsoft SQL Server using the SQL Native Client 10.0 ODBC Driver - allows connection to SQL 7, 2000, 2005 and 2008
+$connection = odbc_connect("Driver={SQL Server Native Client 10.0}; Server=$server;Database=$database;", root, root);
+
+// Microsoft Access
+$connection = odbc_connect("Driver={Microsoft Access Driver (*.mdb)};Dbq=$mdbFilename", $user, $password);
+
+// Microsoft Excel
+$excelFile = realpath('C:/ExcelData.xls');
+$excelDir = dirname($excelFile);
+$connection = odbc_connect("Driver={Microsoft Excel Driver (*.xls)};DriverId=790;Dbq=$excelFile;DefaultDir=$excelDir" , '', '');
+?> 
+        <!-- <div class="head">
+
+
+            <form class="form-inline ml-3" style="position:absolute;">
+                <div class="input-group" style="margin-top:20px; margin-left:200px;">
+                    <input type="text" class="form-control" placeholder="search" style="width:300px;
+                height:50px;">
+                    <div class="input-group-append">
+                        <button class="btn search-btn" type="button">
+                   <i class="fas fa-search text-muted"></i>
+            </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="card" style="width:300px; height:300px; color:yellowgreen; position:absolute;">
+
+        </div> -->
+</body>
+
+</html>
